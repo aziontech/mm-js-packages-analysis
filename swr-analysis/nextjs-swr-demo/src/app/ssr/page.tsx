@@ -1,16 +1,16 @@
-import Repo from "@/components/Repo";
+import UserInfo from "@/components/UserInfo";
 import { SWRCustomProvider } from "@/providers/SWRCustomProvider";
 import Image from "next/image";
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
-const API = "https://api.github.com/repos/aziontech/azion";
+const API = "https://jsonplaceholder.typicode.com/users/1";
 
 async function getData() {
   console.log("Fetching data server side");
 
-  const repoInfo = await fetcher(API);
+  const data = await fetch(API);
+  const userInfo = await data.json();
   return {
-    [API]: repoInfo,
+    [API]: userInfo,
   };
 }
 
@@ -36,7 +36,10 @@ export default async function Page() {
             <h1 className="text-sky-500 text-3xl">
               Content returned from the API {API}
             </h1>
-            <Repo urlApi={API} />
+            <h2 className="text-orange-700 text-2xl">
+              Fetching data server side
+            </h2>
+            <UserInfo urlApi={API} />
           </div>
         </div>
       </main>
