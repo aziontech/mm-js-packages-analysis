@@ -12,6 +12,7 @@ Also created a test with the server-side API call (SSR) using SWRConfig (Provide
 - ✅ **Contains usage examples.**
 - ✅ **This lib does not contain dependencies that could cause incompatibility with the Azion Runtime.**
 - ✅ **Test CLI**
+- ⚠️ **To use the [cache provider](https://swr.vercel.app/docs/advanced/cache.en-US) with React 18, it is necessary to update the swr lib to the latest.**
 
 ## What is SWR?
 
