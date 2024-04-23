@@ -4,7 +4,7 @@ In this example (test), a `<Posts />` component was created where it makes API c
 
 Also created a test with the server-side API call (SSR) using SWRConfig (Provider).
 
-- Use Component `<Repo />` and provider `<SWRCustomProvider />`
+- Use Component `<UserInfo />` and provider `<SWRCustomProvider />`
 - Router Page `/ssr`
 
 ## Results
