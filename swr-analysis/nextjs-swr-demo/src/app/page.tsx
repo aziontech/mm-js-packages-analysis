@@ -25,7 +25,7 @@ export default function Home() {
         <h5>
           Content returned from the API{" "}
           <span className="font-bold">
-            https://jsonplaceholder.typicode.com/comments
+            https://jsonplaceholder.typicode.com/posts
           </span>{" "}
           using the SWR Hooks library for data fetching.
         </h5>
