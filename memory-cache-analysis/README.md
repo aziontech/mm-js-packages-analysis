@@ -13,6 +13,10 @@ In the test, two Routes /memory-cache and /fetch-cache were created.
 
 - This route is making the call to https://jsonplaceholder.typicode.com/users/2 with the next revalidate equal to 30, which means to cache this call in 30 seconds. This route does not use the library `memory-cache`.
 
+> Route /client-side-cache
+
+- This route is making the call to https://jsonplaceholder.typicode.com/users/4 with the next revalidation equal to 0 and using the page as a client side. This is an example of how to cache using localstorage. This route does not use the `memory-cache` library.
+
 ⚠️ `Important: This behavior (next revalidate) is not yet supported in Runtime (Cells) and Vulcan (Local dev).`
 
 ## Results
