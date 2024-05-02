@@ -1,14 +1,11 @@
+"use client";
+
 import Users from "@/components/Users";
 import Image from "next/image";
 import Link from "next/link";
-import memoCache from "memory-cache";
+import { useEffect, useState } from "react";
 
-async function getUser(id: string) {
-  const cacheKey = `users_${id}`;
-  const cachedUsers = memoCache.get(cacheKey);
-  if (cachedUsers) {
-    return JSON.parse(cachedUsers);
-  }
+async function getUser(id: number) {
   const response = await fetch(
     `https://jsonplaceholder.typicode.com/users/${id}`,
     {
@@ -22,13 +19,27 @@ async function getUser(id: string) {
     ...user,
     requestId: response.headers.get("age") || Math.floor(Math.random() * 1000),
   };
-  memoCache.put(cacheKey, JSON.stringify(dataCache));
 
   return dataCache;
 }
 
-export default async function Page() {
-  const user = await getUser("1");
+export default function Page() {
+  const [user, setUser] = useState<any>(null);
+  const userId = 4;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const userResult = await getUser(userId);
+      localStorage.setItem(`users_${userId}`, JSON.stringify(userResult));
+      setUser(userResult);
+    };
+    const userCache = localStorage.getItem(`users_${userId}`) || null;
+    if (!userCache) {
+      fetchData();
+    } else {
+      setUser(JSON.parse(userCache));
+    }
+  }, [userId]);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24 space-y-9">
@@ -47,7 +58,7 @@ export default async function Page() {
           priority
         />
         <h1 className="text-xl">memory-cache@^0.2.0 Analysis</h1>
-        <h2 className="text-lg">Memory Cache Library</h2>
+        <h2 className="text-lg">Client side Cache (localStorage)</h2>
       </div>
       <div className="flex flex-col space-y-5 justify-center items-center">
         <Users data={user} />

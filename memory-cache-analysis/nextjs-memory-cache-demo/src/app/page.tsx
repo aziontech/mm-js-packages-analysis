@@ -26,6 +26,11 @@ export default function Home() {
             Go to /fetch-cache
           </Link>
         </div>
+        <div className="p-2 border border-solid border-white cursor-pointer rounded">
+          <Link href="/client-side-cache" prefetch={false}>
+            Go to /client-side-cache
+          </Link>
+        </div>
       </div>
     </main>
   );

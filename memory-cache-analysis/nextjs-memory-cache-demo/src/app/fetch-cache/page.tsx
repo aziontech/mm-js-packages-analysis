@@ -15,7 +15,7 @@ async function getUser(id: string) {
   const user = await response.json();
   return {
     ...user,
-    requestId: response.headers.get("age"),
+    requestId: response.headers.get("age") || Math.floor(Math.random() * 1000),
   };
 }
 
@@ -39,6 +39,7 @@ export default async function Page() {
           priority
         />
         <h1 className="text-xl">memory-cache@^0.2.0 Analysis</h1>
+        <h2 className="text-lg">Fetch Cache (Next.js revalidate)</h2>
       </div>
       <div className="flex flex-col space-y-5 justify-center items-center">
         <Users data={user} />
