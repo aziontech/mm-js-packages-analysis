@@ -1,12 +1,12 @@
 # Dato CMS Analysis
 
-In this example (test), has been te4h adaptation of this example https://github.com/datocms/nextjs-demo to run in the Azion edge runtime.
+In this example (test), has been made the adaptation of this example https://github.com/datocms/nextjs-demo to run in the Azion edge runtime.
 
 
 ## Necessary Adaptations
 
-- Substitute the @datocms/cma-client-node for @datocms/cma-client-browser (https://github.com/datocms/js-rest-api-clients)
-
+- Substitute the @datocms/cma-client-node for @datocms/cma-client-browser - [js-rest-api-clients](https://github.com/datocms/js-rest-api-clients)
+- Setup the layout.js to use vercel edge runtime
 ## Results
 
 - ✅ **Contains usage examples.**
@@ -16,49 +16,21 @@ In this example (test), has been te4h adaptation of this example https://github.
 
 ## What is DatoCMS?
 
-SWR is a React Hooks library for data fetching.
+[DatoCMS](https://www.datocms.com/) is the REST & GraphQL Headless CMS for the modern web.
 
-The name “SWR” is derived from stale-while-revalidate, a cache invalidation strategy popularized by HTTP RFC 5861. SWR first returns the data from cache (stale), then sends the request (revalidate), and finally comes with the up-to-date data again.
+Trusted by over 25,000 enterprise businesses, agency partners, and individuals across the world, DatoCMS users create online content at scale from a central hub and distribute it via API. We ❤️ our [developers](https://www.datocms.com/team/best-cms-for-developers), [content editors](https://www.datocms.com/team/content-creators) and [marketers](https://www.datocms.com/team/cms-digital-marketing)!
 
-With just one hook, you can significantly simplify the data fetching logic in your project. And it also covered in all aspects of speed, correctness, and stability to help you build better experiences:
+**Quick links:**
 
-- Fast, lightweight and reusable data fetching
-- Transport and protocol agnostic
-- Built-in cache and request deduplication
-- Real-time experience
-- Revalidation on focus
-- Revalidation on network recovery
-- Polling
-- Pagination and scroll position recovery
-- SSR and SSG
-- Local mutation (Optimistic UI)
-- Built-in smart error retry
-- TypeScript
-- React Suspense
-- React Native
+- ⚡️ Get started with a [free DatoCMS account](https://dashboard.datocms.com/signup)
+- 🔖 Go through the [docs](https://www.datocms.com/docs)
+- ⚙️ Get [support from us and the community](https://community.datocms.com/)
+- 🆕 Stay up to date on new features and fixes on the [changelog](https://www.datocms.com/product-updates)
 
 ## Testing to the Edge
 
 Using Azion CLI:
 
-> Azion CLI [https://www.azion.com/en/documentation/products/azion-cli/overview/](https://www.azion.com/en/documentation/products/azion-cli/overview/)
+See all setup on example directory [dato-cms-demo](dato-cms-demo)
 
-```bash
 
-azion build
-
-```
-
-```bash
-
-azion dev
-
-```
-
-## Testing with Next.js Local
-
-```bash
-
-pnpm dev
-
-```
