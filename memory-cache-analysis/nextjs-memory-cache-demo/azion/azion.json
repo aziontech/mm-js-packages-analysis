@@ -1,0 +1,34 @@
+{
+  "name": "exuberant-mothman",
+  "bucket": "",
+  "preset": "next",
+  "mode": "compute",
+  "env": "production",
+  "prefix": "20240429171640",
+  "not-first-run": false,
+  "function": {
+    "id": 0,
+    "name": "__DEFAULT__",
+    "file": "./out/worker.js",
+    "args": "./azion/args.json",
+    "instance-id": 0,
+    "instance-name": "__DEFAULT__"
+  },
+  "application": {
+    "id": 0,
+    "name": "__DEFAULT__"
+  },
+  "domain": {
+    "id": 0,
+    "name": "__DEFAULT__"
+  },
+  "rt-purge": {
+    "purge_on_publish": true
+  },
+  "origin": null,
+  "rules-engine": {
+    "created": false,
+    "rules": null
+  },
+  "cache-settings": null
+}
