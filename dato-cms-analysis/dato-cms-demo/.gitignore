@@ -1,0 +1,9 @@
+.env
+.env.local
+.now
+.next
+node_modules/
+out/
+.vercel
+.edge
+azion
