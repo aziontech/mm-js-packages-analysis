@@ -1,18 +1,20 @@
-import { AuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
+import { NextAuthConfig } from "next-auth";
 
-const authOptions: AuthOptions = {
+const authOptions: NextAuthConfig = {
+  secret: process.env.NEXTAUTH_SECRET || Azion.env.get("NEXTAUTH_SECRET"),
   providers: [
     GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID!,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+      clientId: process.env.GOOGLE_CLIENT_ID || Azion.env.get("GOOGLE_CLIENT_ID"),
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET || Azion.env.get("GOOGLE_CLIENT_SECRET"),
     }),
   ],
   callbacks: {
-    signIn: async ({ user }) => {
+    signIn: ({ user }) => {
+      
       return true;
     },
-    session: async ({ session }) => {
+    session: ({ session }) => {
       return session;
     },
   },
