@@ -13,7 +13,7 @@ export default function Home() {
           height={37}
           priority
         />
-        <h1 className="text-xl">Next-Auth@^4.7.0 Analysis</h1>
+        <h1 className="text-xl">Next-Auth@^5.0.0-beta.17 Analysis</h1>
       </div>
       <div className="flex flex-col space-y-5 justify-center items-center">
         <div className="flex justify-center items-center min-w-28">
