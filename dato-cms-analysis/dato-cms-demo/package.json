@@ -9,7 +9,7 @@
     "export": "next build && next export"
   },
   "dependencies": {
-    "@datocms/cma-client-browser": "^3.3.0",
+    "@datocms/cma-client-browser": "^6.1.0",
     "@datocms/cma-client-node": "*",
     "classnames": "2.3.1",
     "date-fns": "^2.28.0",
